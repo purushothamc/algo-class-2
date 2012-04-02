@@ -33,8 +33,8 @@ def count_and_mergesort(lst):
   left = lst[:middle]
   right = lst[middle:]
 
-  (left, splitinvl) = mergesort(left)
-  (right, splitinvr) = mergesort(right)
+  (left, splitinvl) = count_and_mergesort(left)
+  (right, splitinvr) = count_and_mergesort(right)
 
   (res, splitinvs) = merge_and_count_splitinv(left, right)
   return (res, splitinvs+splitinvl+splitinvr)
